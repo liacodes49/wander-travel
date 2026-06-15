@@ -16,10 +16,26 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [tripData, setTripData] = useState<any>(null);
+  const [backendConfig, setBackendConfig] = useState<{ isDemo: boolean; provider: string }>({
+    isDemo: true,
+    provider: 'Demo Mode'
+  });
   
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
-  // Auto-detect if we are running in demo mode (no keys configured on the server)
+  useEffect(() => {
+    fetch('/api/config')
+      .then((res) => res.json())
+      .then((data) => {
+        setBackendConfig({
+          isDemo: data.isDemo,
+          provider: data.provider
+        });
+      })
+      .catch((err) => console.error('Error fetching config:', err));
+  }, []);
+
+  // Auto-detect if the loaded trip was a mock/fallback trip
   const isDemo = tripData && tripData.destination && tripData.destination.includes('Demo Mode');
 
   const handleNavigate = (page: 'home' | 'quiz' | 'result') => {
@@ -98,7 +114,8 @@ export default function Home() {
           <Hero 
             onPlanTrip={handlePlanTrip} 
             inputRef={inputRef} 
-            isDemo={!process.env.GEMINI_API_KEY && !process.env.ANTHROPIC_API_KEY} 
+            isDemo={backendConfig.isDemo}
+            activeProvider={backendConfig.provider}
           />
           <Features />
           <QuizSection onPlanCTA={handlePlanTripClick} />

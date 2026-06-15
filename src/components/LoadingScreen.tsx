@@ -1,15 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import LucideIcon from './LucideIcon';
 
 const LOADING_STEPS = [
-  "✈️ Searching dream destinations...",
-  "🏨 Comparing perfect stays...",
-  "🍔 Finding local food gems...",
-  "📷 Discovering photo spots...",
-  "🗺️ Mapping hidden gems...",
-  "🎒 Packing your suitcase...",
-  "📖 Writing your travel story..."
+  { icon: "Plane", text: "Searching dream destinations..." },
+  { icon: "Hotel", text: "Comparing perfect stays..." },
+  { icon: "Utensils", text: "Finding local food gems..." },
+  { icon: "Camera", text: "Discovering photo spots..." },
+  { icon: "Map", text: "Mapping hidden gems..." },
+  { icon: "Briefcase", text: "Packing your suitcase..." },
+  { icon: "BookOpen", text: "Writing your travel story..." }
 ];
 
 interface LoadingScreenProps {
@@ -54,9 +55,12 @@ export default function LoadingScreen({ isLoading, isCompleted }: LoadingScreenP
 
   return (
     <div id="loading-screen">
-      <div className="loading-plane-anim">✈️</div>
-      <div className="loading-title-text" id="loading-title">
-        {isCompleted ? 'Your adventure is ready! ✈️' : 'Planning your adventure...'}
+      <div className="loading-plane-anim" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <LucideIcon name="Plane" size={54} color="var(--orange)" />
+      </div>
+      <div className="loading-title-text" id="loading-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+        {isCompleted && <LucideIcon name="CheckCircle" size={24} color="var(--blue)" />}
+        {isCompleted ? 'Your adventure is ready!' : 'Planning your adventure...'}
       </div>
       <div className="loading-bar-wrap">
         <div 
@@ -76,8 +80,9 @@ export default function LoadingScreen({ isLoading, isCompleted }: LoadingScreenP
             className = 'done';
           }
           return (
-            <li key={idx} className={className}>
-              {step}
+            <li key={idx} className={className} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <LucideIcon name={step.icon} size={16} />
+              {step.text}
             </li>
           );
         })}

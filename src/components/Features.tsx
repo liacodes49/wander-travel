@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
+import LucideIcon from './LucideIcon';
 
 const FEATURES_DATA = [
-  { icon: '✈️', title: 'AI Itinerary', desc: 'Day-by-day plans perfectly tailored to your style, pace, and budget' },
-  { icon: '💰', title: 'Budget Planner', desc: 'Smart breakdowns across flights, stays, food & activities' },
-  { icon: '🍜', title: 'Food Explorer', desc: 'Local dishes, hidden cafes, street food secrets, and more' },
-  { icon: '💎', title: 'Hidden Gems', desc: 'Off-the-beaten-path spots only seasoned travelers know about' },
-  { icon: '🎒', title: 'Packing Assistant', desc: 'Smart checklists based on destination, weather & activities' },
-  { icon: '📖', title: 'Travel Journal', desc: 'Your entire trip saved as a beautiful, shareable scrapbook' }
+  { icon: 'Plane', title: 'AI Itinerary', desc: 'Day-by-day plans perfectly tailored to your style, pace, and budget' },
+  { icon: 'Coins', title: 'Budget Planner', desc: 'Smart breakdowns across flights, stays, food & activities' },
+  { icon: 'Utensils', title: 'Food Explorer', desc: 'Local dishes, hidden cafes, street food secrets, and more' },
+  { icon: 'Gem', title: 'Hidden Gems', desc: 'Off-the-beaten-path spots only seasoned travelers know about' },
+  { icon: 'Briefcase', title: 'Packing Assistant', desc: 'Smart checklists based on destination, weather & activities' },
+  { icon: 'BookOpen', title: 'Travel Journal', desc: 'Your entire trip saved as a beautiful, shareable scrapbook' }
 ];
 
 export default function Features() {
@@ -22,7 +23,9 @@ export default function Features() {
         <div className="feat-grid">
           {FEATURES_DATA.map((feat, idx) => (
             <div key={idx} className="feat-card">
-              <span className="feat-icon">{feat.icon}</span>
+              <span className="feat-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+                <LucideIcon name={feat.icon} size={42} />
+              </span>
               <h3>{feat.title}</h3>
               <p>{feat.desc}</p>
             </div>

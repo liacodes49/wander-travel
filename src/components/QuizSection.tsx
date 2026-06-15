@@ -1,47 +1,48 @@
 'use client';
 
 import React, { useState } from 'react';
+import LucideIcon from './LucideIcon';
 
 const QUESTIONS = [
   {
     step: 1,
     question: '1. Your ideal landscape?',
     options: [
-      { text: '🏖️ Beach & Ocean', val: 'Beach' },
-      { text: '🏔️ Mountains & Forests', val: 'Mountains' },
-      { text: '🏙️ City & Culture', val: 'City' },
-      { text: '🏜️ Desert & Adventure', val: 'Desert' }
+      { text: 'Beach & Ocean', icon: 'Palmtree', val: 'Beach' },
+      { text: 'Mountains & Forests', icon: 'Mountain', val: 'Mountains' },
+      { text: 'City & Culture', icon: 'Building', val: 'City' },
+      { text: 'Desert & Adventure', icon: 'Compass', val: 'Desert' }
     ]
   },
   {
     step: 2,
     question: '2. Your travel style?',
     options: [
-      { text: '🥂 Luxury & Comfort', val: 'Luxury' },
-      { text: '🎒 Backpacking & Budget', val: 'Backpacking' },
-      { text: '📸 Photography & Art', val: 'Photography' },
-      { text: '🍜 Food & Culture', val: 'Food' }
+      { text: 'Luxury & Comfort', icon: 'Crown', val: 'Luxury' },
+      { text: 'Backpacking & Budget', icon: 'Briefcase', val: 'Backpacking' },
+      { text: 'Photography & Art', icon: 'Camera', val: 'Photography' },
+      { text: 'Food & Culture', icon: 'Utensils', val: 'Food' }
     ]
   },
   {
     step: 3,
     question: '3. Your perfect travel moment?',
     options: [
-      { text: '🌅 Sunrise at a viewpoint', val: 'Sunrise' },
-      { text: '🌙 Midnight street food', val: 'Street Food' },
-      { text: '💧 Discovering a waterfall', val: 'Hidden Waterfall' },
-      { text: '🍹 Rooftop sunset cocktail', val: 'Rooftop' }
+      { text: 'Sunrise at a viewpoint', icon: 'Sunrise', val: 'Sunrise' },
+      { text: 'Midnight street food', icon: 'Moon', val: 'Street Food' },
+      { text: 'Discovering a waterfall', icon: 'Droplets', val: 'Hidden Waterfall' },
+      { text: 'Rooftop sunset cocktail', icon: 'GlassWater', val: 'Rooftop' }
     ]
   }
 ];
 
 const PERSONALITIES = [
-  { name: 'The Explorer', emoji: '🧭', desc: 'You live for discovery. Off-the-beaten-path is your natural habitat.' },
-  { name: 'The Luxury Traveler', emoji: '✨', desc: 'You appreciate the finest things — views, villas, and exceptional service.' },
-  { name: 'The Photographer', emoji: '📷', desc: 'Every destination is a canvas. You see the world in frames and light.' },
-  { name: 'The Foodie', emoji: '🍜', desc: 'Your itinerary is built around the best meals, not monuments.' },
-  { name: 'The Backpacker', emoji: '🎒', desc: 'Light luggage, big adventures. Budget is your superpower.' },
-  { name: 'The Nature Lover', emoji: '🌿', desc: 'Mountains, forests, oceans — you need to feel the wild to feel alive.' }
+  { name: 'The Explorer', icon: 'Compass', desc: 'You live for discovery. Off-the-beaten-path is your natural habitat.' },
+  { name: 'The Luxury Traveler', icon: 'Crown', desc: 'You appreciate the finest things — views, villas, and exceptional service.' },
+  { name: 'The Photographer', icon: 'Camera', desc: 'Every destination is a canvas. You see the world in frames and light.' },
+  { name: 'The Foodie', icon: 'Utensils', desc: 'Your itinerary is built around the best meals, not monuments.' },
+  { name: 'The Backpacker', icon: 'Briefcase', desc: 'Light luggage, big adventures. Budget is your superpower.' },
+  { name: 'The Nature Lover', icon: 'Leaf', desc: 'Mountains, forests, oceans — you need to feel the wild to feel alive.' }
 ];
 
 interface QuizSectionProps {
@@ -78,7 +79,9 @@ export default function QuizSection({ onPlanCTA }: QuizSectionProps) {
   return (
     <div className="quiz-wrap" id="quiz-section">
       <div className="quiz-inner">
-        <h2>✨ What kind of traveler are you?</h2>
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+          <LucideIcon name="Sparkles" size={24} color="var(--yellow)" /> What kind of traveler are you?
+        </h2>
         <p>Answer 3 quick questions and discover your wanderer personality</p>
 
         {step < 3 ? (
@@ -90,7 +93,9 @@ export default function QuizSection({ onPlanCTA }: QuizSectionProps) {
                   key={idx}
                   className={`quiz-opt ${selectedOpt === idx ? 'selected' : ''}`}
                   onClick={() => handleOptionSelect(idx)}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
                 >
+                  <LucideIcon name={opt.icon} size={18} color="white" />
                   {opt.text}
                 </div>
               ))}
@@ -99,14 +104,18 @@ export default function QuizSection({ onPlanCTA }: QuizSectionProps) {
         ) : (
           result && (
             <div className="personality-result" id="quiz-result">
-              <span className="p-emoji" id="p-emoji">
-                {result.emoji}
+              <span className="p-emoji" id="p-emoji" style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
+                <LucideIcon name={result.icon} size={64} />
               </span>
               <h3 id="p-name">{result.name}</h3>
               <p id="p-desc">{result.desc}</p>
-              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-                <button className="quiz-cta" onClick={onPlanCTA}>
-                  ✈ Plan Your Perfect Trip
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button 
+                  className="quiz-cta" 
+                  onClick={onPlanCTA}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                >
+                  <LucideIcon name="Plane" size={16} /> Plan Your Perfect Trip
                 </button>
                 <button
                   className="quiz-cta"

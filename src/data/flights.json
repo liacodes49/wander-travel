@@ -1,0 +1,167 @@
+[
+  {
+    "id": "f1",
+    "airline": "IndiGo",
+    "flightNumber": "6E-2041",
+    "origin": "Delhi (DEL)",
+    "destination": "Goa (GOI)",
+    "price": "₹5,400",
+    "departure": "08:30 AM",
+    "duration": "2h 30m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f2",
+    "airline": "Air India",
+    "flightNumber": "AI-803",
+    "origin": "Mumbai (BOM)",
+    "destination": "Goa (GOI)",
+    "price": "₹4,800",
+    "departure": "11:45 AM",
+    "duration": "1h 15m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f3",
+    "airline": "Vistara",
+    "flightNumber": "UK-872",
+    "origin": "Bangalore (BLR)",
+    "destination": "Goa (GOI)",
+    "price": "₹6,200",
+    "departure": "02:15 PM",
+    "duration": "1h 20m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f4",
+    "airline": "IndiGo",
+    "flightNumber": "6E-502",
+    "origin": "Delhi (DEL)",
+    "destination": "Manali (KUU)",
+    "price": "₹7,800",
+    "departure": "07:00 AM",
+    "duration": "1h 20m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f5",
+    "airline": "Alliance Air",
+    "flightNumber": "9I-805",
+    "origin": "Chandigarh (IXC)",
+    "destination": "Manali (KUU)",
+    "price": "₹4,200",
+    "departure": "09:30 AM",
+    "duration": "0h 45m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f6",
+    "airline": "Air India",
+    "flightNumber": "AI-512",
+    "origin": "Mumbai (BOM)",
+    "destination": "Kerala (COK)",
+    "price": "₹6,500",
+    "departure": "10:15 AM",
+    "duration": "2h 00m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f7",
+    "airline": "IndiGo",
+    "flightNumber": "6E-344",
+    "origin": "Delhi (DEL)",
+    "destination": "Kerala (COK)",
+    "price": "₹7,200",
+    "departure": "01:45 PM",
+    "duration": "3h 10m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f8",
+    "airline": "Thai Airways",
+    "flightNumber": "TG-318",
+    "origin": "Delhi (DEL)",
+    "destination": "Bangkok (BKK)",
+    "price": "₹14,500",
+    "departure": "11:30 PM",
+    "duration": "4h 15m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f9",
+    "airline": "Air India",
+    "flightNumber": "AI-382",
+    "origin": "Mumbai (BOM)",
+    "destination": "Bangkok (BKK)",
+    "price": "₹13,800",
+    "departure": "08:15 AM",
+    "duration": "4h 30m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f10",
+    "airline": "Singapore Airlines",
+    "flightNumber": "SQ-978",
+    "origin": "Bangalore (BLR)",
+    "destination": "Tokyo (NRT)",
+    "price": "₹42,000",
+    "departure": "11:10 PM",
+    "duration": "9h 30m",
+    "stops": "1 stop"
+  },
+  {
+    "id": "f11",
+    "airline": "Japan Airlines",
+    "flightNumber": "JL-740",
+    "origin": "Delhi (DEL)",
+    "destination": "Tokyo (HND)",
+    "price": "₹55,000",
+    "departure": "07:30 PM",
+    "duration": "7h 50m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f12",
+    "airline": "Emirates",
+    "flightNumber": "EK-702",
+    "origin": "Mumbai (BOM)",
+    "destination": "Rome (FCO)",
+    "price": "₹38,000",
+    "departure": "04:30 AM",
+    "duration": "10h 45m",
+    "stops": "1 stop"
+  },
+  {
+    "id": "f13",
+    "airline": "ITA Airways",
+    "flightNumber": "AZ-770",
+    "origin": "Delhi (DEL)",
+    "destination": "Rome (FCO)",
+    "price": "₹48,000",
+    "departure": "02:20 PM",
+    "duration": "8h 15m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f14",
+    "airline": "IndiGo",
+    "flightNumber": "6E-1792",
+    "origin": "Cochin (COK)",
+    "destination": "Maldives (MLE)",
+    "price": "₹11,200",
+    "departure": "12:15 PM",
+    "duration": "1h 45m",
+    "stops": "Direct"
+  },
+  {
+    "id": "f15",
+    "airline": "Maldivian",
+    "flightNumber": "Q2-702",
+    "origin": "Mumbai (BOM)",
+    "destination": "Maldives (MLE)",
+    "price": "₹14,800",
+    "departure": "09:00 AM",
+    "duration": "2h 50m",
+    "stops": "Direct"
+  }
+]
